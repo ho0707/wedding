@@ -33,11 +33,17 @@
 
     .container{max-width:720px;margin:0 auto;padding:22px}
     section{scroll-margin-top:84px}
-
+    /* 제목, 인용문, 본문 모두 공백 기준으로만 줄바꿈 */
+    h1, h2, .quote, #story p, .line-intro {
+      word-break: keep-all;     /* 핵심 */
+      overflow-wrap: normal;    /* 임의 쪼개기 방지 */
+      white-space: normal;
+      line-break: strict;       /* CJK 줄바꿈 규칙 더 엄격히 */
+    }
     /* 한글 섹션 제목은 Nanum Myeongjo */
     h2{
       margin:8px 0 12px;
-      font:700 clamp(17px,2.2vw,24px) serif;
+      font:700 clamp(16px,2.2vw,24px) serif;
       letter-spacing:.02em; text-align:center; color:#2f2a2a;
       text-wrap:balance;
     }
